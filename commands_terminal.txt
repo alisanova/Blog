@@ -1,0 +1,30 @@
+# Создаем виртуальное окружение
+& C:/Users/trans/AppData/Local/Programs/Python/Python311/python.exe -m venv venv
+
+# Активируем виртуальное окружение
+venv/scripts/activate
+
+# Обновляем пакетный менеджер 
+python -m pip install --upgrade pip
+
+# Устанавливаем фреймворк
+pip install django
+
+# Создаем проект 
+django-admin startproject blog_project
+
+# Заходим в папку с проектом
+cd blog_project
+
+# Создаем приложение
+python manage.py startapp blog 
+
+# запускаем приложение
+python manage.py runserver
+
+# изменяем базу данных
+python manage.py makemigrations
+python manage.py migrate 
+
+# регистрация админа 
+python manage.py createsuperuser

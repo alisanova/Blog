@@ -1,0 +1,17 @@
+{% extends 'blog/index.html' %}
+
+{% block content %}
+{% for post in category.posts.objects.all %}
+<div class="card">
+    <h3 class="card-title text-center">{{ post.title }}</h3>
+    <img src="{{ post.image.url }}" class="card-img-top">
+    <div class="card-body">
+        <p class="card-text">
+            {{ post.body }}
+        </p>
+        <a href="{% url 'post_detail_url' pk=post.pk %}" class="btn btn-outline-primary">Read more</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+    
